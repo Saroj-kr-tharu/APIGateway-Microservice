@@ -51,6 +51,9 @@ const midle_proxy = createProxyMiddleware({
 // app.use("/auth", auth_proxy);
 
 app.use("/authservice", midle_proxy);
+app.get('/home', (req, res) => {
+  return res.json({ message: 'OK' });
+});
 
 app.listen(PORT, () => {
   console.log(`Gateway running on http://localhost:${PORT}`);
